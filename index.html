@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Develops Workshop</title>
+    <link rel="stylesheet" href="styles.css">
+   </head>
+<body id="the-developers-workshop" class="book toc-left">
+    <div id="header-bar" class="container" role="banner">
+        <div id="banner" class="contained" role="banner">
+        </div>
+    </div>
+    <div id="side-bar" class="container" role="navigation">
+        <div id="tocbar" class="contained" role="navigation">
+            <button id="toggle-toc"></button>
+        </div>
+    </div>
+    <div id="conent-bar" class="container">
+        <div id="main" class="contained">
+            <div id="doc" class="doc">
+                <div id="header">
+                    <div id="toc" class="sidebar">
+                        <ul class="topic1">
+                            <li><a href="#java8">1. Java 8</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="content">
+                    <div class="sect1">
+                        <h2 id="java8"><a class="anchor" href="#java8"></a>1. Java 8</h2>
+                        <div class="sectionbody">
+                            <div class="paragraph">
+                                <p>Java 8, released in 2014, introduced several powerful features that
+                                     revolutionized the way we write code in Java. One of the most 
+                                     significant additions was the inclusion of lambda expressions,
+                                      which brought functional programming capabilities to the language.
+                                       With lambdas, developers gained a concise and expressive way to 
+                                       write code, making it easier to work with collections and perform
+                                        complex operations. Another key feature in Java 8 is the Stream 
+                                        API, which provides a streamlined and efficient way to process 
+                                        data in a declarative manner. Additionally, the introduction of
+                                         default and static methods in interfaces expanded their 
+                                         functionality, enabling existing interfaces to evolve without 
+                                         breaking the implementations. Java 8 also introduced the
+                                          Optional class, which helps handle null values more effectively and promotes better code
+                                           readability. Overall, Java 8 was a game-changer, empowering developers
+                                           with new tools and techniques to write cleaner, more efficient, and more maintainable code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div id="footer-text">
+                        Sharun Thomas<br>
+                        Last updated 2023-07-15 01:02:00 UTC
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    const links = document.querySelectorAll('.sidebar a');
+//   const sections = document.querySelectorAll('.content section');
+
+  links.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+    //   const targetSection = document.querySelector(this.getAttribute('href'));
+    //   sections.forEach(section => section.style.display = 'none');
+    //   targetSection.style.display = 'block';
+
+      links.forEach(link => link.parentNode.classList.remove('active'));
+      this.parentNode.classList.add('active');
+    });
+  });
+
+  // Show the first topic on page load
+  const firstLink = document.querySelector('.sidebar a');
+  firstLink.parentNode.classList.add('active');
+  firstLink.click();
+</script>
+
+</html>
